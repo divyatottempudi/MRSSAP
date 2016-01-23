@@ -1,0 +1,49 @@
+﻿@model MRSSApp.ViewModel.AppointmentListViewModel
+@{
+    ViewBag.Title = "PatientAppointmentList";
+}
+
+<h2>PatientAppointmentList</h2>
+<hr/>
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            Welcome Mr. @Model.PatientName<br />
+            Below is your appointment history.
+        </p>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>Appointment Date&Time</th>
+        <th>Patient Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Internal Problem</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.ApoointmentModels)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonAge)
+            </td>
+            <td>
+                @(item.Gender == 1 ? "Male" : "Female")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternalProblem)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.AppointmentId })
+            </td>
+        </tr>
+    }
+</table>
+

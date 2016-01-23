@@ -1,0 +1,74 @@
+﻿@model MRSSApp.ViewModel.AppointmentListViewModel
+@{
+    ViewBag.Title = "AppointmentList";
+}
+
+<h2>AppointmentList</h2>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            Welcome Dr. @Model.DoctorName<br />
+            Below are your pending appointments.
+        </p>
+    </div>
+</div>
+@if (Model.HighAlertCount > 0)
+{
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        You have @Model.HighAlertCount appointments for the day
+    </div>
+}
+@if (Model.MidAlertCount > 0)
+{
+    <div class="alert alert-warning" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        You have @Model.MidAlertCount appointments for tomorrow
+    </div>
+}
+@if (Model.NoRiskAlertCount > 0)
+{
+    <div class="alert alert-success" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        You have @Model.NoRiskAlertCount appointments for the coming days
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>Appointment</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Internal Problem</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.ApoointmentModels)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonAge)
+            </td>
+            <td>
+                @(item.Gender == 1 ? "Male" : "Female")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternalProblem)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AppointmentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentId })
+            </td>
+        </tr>
+    }
+</table>

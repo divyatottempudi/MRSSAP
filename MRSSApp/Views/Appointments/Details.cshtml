@@ -1,0 +1,117 @@
+﻿@model MRSSApp.ViewModel.AppointmentDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.DepartmentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.DepartmentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.DoctorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.DoctorName)
+        </dd>
+
+        <dt>
+            AppointmentDateTime :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.AppointmentDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.PersonFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.PersonFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.PersonLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.PersonLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.PersonAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.PersonAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.AlternateNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.AlternateNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.InternalProblem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.InternalProblem)
+        </dd>
+        
+        <dt>
+            Prescription :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.Prescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (Model.CanEdit)
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Appointment.AppointmentId })<p>|</p>
+    }
+    @Html.ActionLink("Back to List", Model.ControllerName)
+</p>

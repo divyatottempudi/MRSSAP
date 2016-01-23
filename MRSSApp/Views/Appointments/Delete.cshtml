@@ -1,0 +1,112 @@
+﻿@model MRSSApp.Models.Appointment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppointmentDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppointmentDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlternateNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlternateNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalProblem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalProblem)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

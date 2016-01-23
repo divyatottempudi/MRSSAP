@@ -1,0 +1,28 @@
+﻿@model MRSSApp.ViewModel.ConfirmationViewModel
+@{
+    ViewBag.Title = "Confirmation";
+} 
+
+<div class="jumbotron">
+    <img src="~/Images/cong.png" style="width: 100%;display: block" />
+
+    <div />
+    <h2>Appointment Confirmation</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <p>Your Confirmation Status!!
+            <ul>
+    <li>You appointment confimration is<strong>@Model.ConfirmationNumber</strong>.<br /></li>
+    <li> Please retain this number for your reference purposes and when calling to confirm your appointment.<br /></li>
+    <li>Your alotted appointment time is <strong>@Model.AllottedTime</strong>.<br /></li>
+    <li>    You are requested to call 4 hours ahead of your appointment time to make a final confirmation of the appointment.</li>
+</ul>                 
+                <br />
+                <br />
+                Thank you,<br />
+                People's Clinic Management.
+            </p>
+        </div>
+    </div>
+
